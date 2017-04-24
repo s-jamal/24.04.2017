@@ -1,0 +1,28 @@
+1. Programlasdirmaya aid öd?m?l?ri çixartmali
+
+SELECT categories.name, payments.value, payments.ispaid, payments.exp_paid_date, payments.pay_date
+FROM `payments`
+INNER JOIN studies ON payments.study_id = studies.id
+INNER JOIN groups ON studies.group_id = groups.id
+INNER JOIN courses ON groups.course_id = courses.id
+INNER JOIN categories on courses.category_id = categories.id
+WHERE courses.id = 1
+
+2. Samir M?llimin d?rsl?rinin hansi labda keçil?c?yini çixartmali
+
+SELECT teachers.full_name, groups.edu_name, groups.start_date, labs.name
+FROM groups
+INNER JOIN labs ON groups.lab_id = labs.id
+INNER JOIN teachers on groups.teacher_id = teachers.id
+WHERE groups.teacher_id = 2
+
+3. Hefte sonu keçiril?n d?rsl?rin siyahasi çixartmali
+
+SELECT courses.name, seances.name, seances.start_hour, seances.end_hour
+FROM courses
+INNER JOIN groups ON courses.id = groups.course_id
+INNER JOIN seances ON groups.seance_id = seances.id
+WHERE weekdays LIKE '6,7'
+
+
+
