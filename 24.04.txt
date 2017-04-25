@@ -6,7 +6,7 @@ INNER JOIN studies ON payments.study_id = studies.id
 INNER JOIN groups ON studies.group_id = groups.id
 INNER JOIN courses ON groups.course_id = courses.id
 INNER JOIN categories on courses.category_id = categories.id
-WHERE courses.id = 1
+WHERE categories.id = 1
 
 2. Samir M?llimin d?rsl?rinin hansi labda keçil?c?yini çixartmali
 
